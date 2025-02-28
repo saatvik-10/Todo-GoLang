@@ -53,7 +53,7 @@ func main() {
 
 	app.Get("/api/todos", getTodos)
 	app.Post("/api/todos", createTodos)
-	// app.Patch("/api/todos/:id", updateTodos)
+	app.Patch("/api/todos/:id", updateTodos)
 	// app.Delete("/api/todos/:id", deleteTodos)
 
 	PORT := os.Getenv("PORT")
@@ -110,9 +110,10 @@ func createTodos(c *fiber.Ctx) error {
 	return c.Status(201).JSON(todo)
 }
 
-// func updateTodos(c *fiber.Ctx) error {
-
-// }
+func updateTodos(c *fiber.Ctx) error {
+	id := c.Params("id")
+	objectID, err := primitive.ObjectIDFromHex(id)
+}
 
 // func deleteTodos(c *fiber.Ctx) error {
 
