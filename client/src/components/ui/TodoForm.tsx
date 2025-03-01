@@ -2,7 +2,7 @@ import { Button, Flex, Input, Spinner } from '@chakra-ui/react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useState, useRef, useEffect } from 'react';
 import { IoMdAdd } from 'react-icons/io';
-import { BASE_URL } from '../../App';
+import { BASE_URL } from '../../base_url/base_url';
 
 const TodoForm = () => {
   const [newTodo, setNewTodo] = useState('');
